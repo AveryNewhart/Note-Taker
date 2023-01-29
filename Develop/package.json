@@ -4,14 +4,17 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
+    "method": "^2.0.0",
     "nodemon": "^2.0.20",
     "path": "^0.12.7",
+    "status": "^0.0.13",
     "uniqid": "^5.4.0"
   }
 }

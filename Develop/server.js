@@ -3,10 +3,11 @@ const path = require('path')
 const fs = require('fs')
 const uniqid = require('uniqid')
 let db = require('./db/db.json')
-const app = express();
 
 //port 
 const PORT = process.env.PORT || 3001;
+
+const app = express();
 
 // middleware
 app.use(express.json());
@@ -16,14 +17,14 @@ app.use(express.static('public'));
 
 // GET Routes
 
-// HTML GET route that is referencing the notes.html file
-app.get('/notes', (req, res) => 
-res.sendFile(path.join(__dirname, '/public/notes.html'))
-);
-
 // HTML GET route this is referencing the index.html file
 app.get('/', (req, res) =>
 res.sendFile(path.join(__dirname, '/public/index.html'))
+);
+
+// HTML GET route that is referencing the notes.html file
+app.get('/notes', (req, res) => 
+res.sendFile(path.join(__dirname, '/public/notes.html'))
 );
 
 // api GET route that is responding with the db.json file.
@@ -38,20 +39,19 @@ app.post('/api/notes', (req, res) => {
  console.log(`${req.method} request recieved to add a note!`);
  
  // deconstructing the items in the body
- const { title, text } = req.body;
+ const { title, text } = req.body
 
 if (title && text) {
 
 const newNote = {
     title,
     text,
-    id: uniqid(),
+    id: uniqid()
 };
 
 fs.readFile('./db/db.json', 'utf8', (err, data) => {
     if(err){
     console.log(err);
-    return;
     } else {
     const parNotes = JSON.parse(data);
 

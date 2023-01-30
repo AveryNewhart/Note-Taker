@@ -21,8 +21,7 @@
   ![screenshot of loadup](./Develop/public/assets/imgs/noteWcontent.png)
 
   ## License
-  -  
-  - 
+  -  N/A
 
   ## Contributions
   - N/A

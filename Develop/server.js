@@ -1,3 +1,4 @@
+// require
 const express = require('express')
 const path = require('path')
 const fs = require('fs')
@@ -7,6 +8,7 @@ let db = require('./db/db.json')
 //port 
 const PORT = process.env.PORT || 8888;
 
+// calling express function
 const app = express();
 
 // middleware
@@ -49,6 +51,7 @@ const newNote = {
     id: uniqid()
 };
 
+// reading that database file
 fs.readFile('./db/db.json', 'utf8', (err, data) => {
     if(err){
     console.log(err);
@@ -56,7 +59,7 @@ fs.readFile('./db/db.json', 'utf8', (err, data) => {
     const parNotes = JSON.parse(data);
 
     parNotes.push(newNote)
-
+// writing to the database file
     fs.writeFile('./db/db.json', JSON.stringify(parNotes), null, (err) => {
         if (err) {
             console.log(err)
@@ -65,6 +68,8 @@ fs.readFile('./db/db.json', 'utf8', (err, data) => {
         }
     })
     }
+
+    // ATTEMPTING TO DO DELETE BUTTON
 
     // app.get("/api/notes/:id", function(req,res) {
     //     // display json for the notes array indices of the provided id
@@ -98,6 +103,8 @@ const response = {
 });
 
  
+// ATTEMTING TO DO DELETE BUTTON
+
 // app.get("/api/notes/:id", function(req,res) {
 //     // display json for the notes array indices of the provided id
 //     res.json(notes[req.params.id]);

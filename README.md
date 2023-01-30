@@ -16,7 +16,9 @@
   - N/A
 
   ## Usage
-  - enter link and photos
+  - link
+  ![screenshot of loadup](./Develop/public/assets/imgs/noteStart.png)
+  ![screenshot of loadup](./Develop/public/assets/imgs/noteWcontent.png)
 
   ## License
   -  

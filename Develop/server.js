@@ -5,7 +5,7 @@ const uniqid = require('uniqid')
 let db = require('./db/db.json')
 
 //port 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8888;
 
 const app = express();
 
@@ -18,19 +18,19 @@ app.use(express.static('public'));
 // GET Routes
 
 // HTML GET route this is referencing the index.html file
-app.get('/', (req, res) =>
+app.get('/', (req, res) => {
 res.sendFile(path.join(__dirname, '/public/index.html'))
-);
+});
 
 // HTML GET route that is referencing the notes.html file
-app.get('/notes', (req, res) => 
+app.get('/notes', (req, res) => {
 res.sendFile(path.join(__dirname, '/public/notes.html'))
-);
+});
 
 // api GET route that is responding with the db.json file.
-app.get('/api/notes', (req, res) => 
+app.get('/api/notes', (req, res) => {
     res.json(db)
-);
+});
 
 
 // POST Routes
@@ -65,7 +65,24 @@ fs.readFile('./db/db.json', 'utf8', (err, data) => {
         }
     })
     }
-})
+
+    // app.get("/api/notes/:id", function(req,res) {
+    //     // display json for the notes array indices of the provided id
+    //     res.json(notes[req.params.id]);
+    // });
+
+    // app.delete("/api/notes/:id", function(req, res) {
+    //     parNotes.splice(req.params.id, 1);
+    //     updateDb();
+    //     console.log("Deleted note with id "+req.params.id);
+    // });
+    
+    // function updateDb() {
+    //     fs.writeFile("db/db.json",JSON.stringify(parNotes,'\t'),err => {
+    //         if (err) throw err;
+    //         return true;
+    //     });
+    })
 
 const response = {
     status: 'success',
@@ -81,14 +98,28 @@ const response = {
 });
 
  
- 
+// app.get("/api/notes/:id", function(req,res) {
+//     // display json for the notes array indices of the provided id
+//     res.json(notes[req.params.id]);
+// });
 
+// app.delete("/api/notes/:id", function(req, res) {
+//     parNotes.splice(req.params.id, 1);
+//     updateDb();
+//     console.log("Deleted note with id "+req.params.id);
+// });
 
+// function updateDb() {
+//     fs.writeFile("db/db.json",JSON.stringify(parNotes,'\t'),err => {
+//         if (err) throw err;
+//         return true;
+//     });
+// }
 
 
 
 
 // getting link to display server
-app.listen(PORT, () => 
+app.listen(PORT, () => {
     console.log(`http://localhost:${PORT}`)
-    );
+});

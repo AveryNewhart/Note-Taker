@@ -16,7 +16,7 @@
   - N/A
 
   ## Usage
-  - link
+  - https://note-take-88-99.herokuapp.com/
   ![screenshot of loadup](./Develop/public/assets/imgs/noteStart.png)
   ![screenshot of loadup](./Develop/public/assets/imgs/noteWcontent.png)
 

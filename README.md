@@ -16,7 +16,7 @@
   - N/A
 
   ## Usage
-  - https://note-take-88-99.herokuapp.com/
+  - (heroku site downn, can still run locally)
   ![screenshot of loadup](./Develop/public/assets/imgs/noteStart.png)
   ![screenshot of loadup](./Develop/public/assets/imgs/noteWcontent.png)
 
